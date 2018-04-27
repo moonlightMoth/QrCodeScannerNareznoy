@@ -28,7 +28,8 @@
             android:layout_height="wrap_content"
             android:text="asasdasdasda"
             android:layout_gravity="center"
-            android:textSize="40sp"/>
+            android:textSize="40sp"
+            android:id="@+id/button"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
