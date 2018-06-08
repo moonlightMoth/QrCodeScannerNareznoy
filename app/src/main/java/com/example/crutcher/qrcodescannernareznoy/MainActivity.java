@@ -49,16 +49,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void singin()
     {
-        EditText email22 = findViewById(R.id.email);
+
         EditText password22 = findViewById(R.id.password);
 
-        String email = email22.getText().toString();
+
         String password = password22.getText().toString();
 
-        if(email.equals( "admin@narez.ru" )&& password.equals( "nareznoygh"))
+        if( password.equals( "nareznoygh"))
         {
             Toast.makeText(MainActivity.this, "Aвторизация успешна1", Toast.LENGTH_SHORT).show();
-            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword("admin@narez.ru",password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
         else {
-            Toast.makeText(MainActivity.this, "Aвторизация провалена1 " + email + " " + password, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Aвторизация провалена1 " + password, Toast.LENGTH_SHORT).show();
         }
     }
 }
