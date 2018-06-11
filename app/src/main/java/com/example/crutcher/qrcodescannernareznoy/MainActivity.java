@@ -78,4 +78,19 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Aвторизация провалена1 " + password, Toast.LENGTH_SHORT).show();
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
 }

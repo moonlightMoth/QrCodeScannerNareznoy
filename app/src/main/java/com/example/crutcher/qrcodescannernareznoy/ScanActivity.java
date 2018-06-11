@@ -1,11 +1,13 @@
 package com.example.crutcher.qrcodescannernareznoy;
 
 import android.Manifest;
+import android.content.Intent;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView;
@@ -44,7 +46,7 @@ public class ScanActivity extends AppCompatActivity {
         final TextView button = findViewById(R.id.button);
         qrCodeReaderView.setOnQRCodeReadListener(new QRCodeReaderView.OnQRCodeReadListener() {
             @Override
-            public void onQRCodeRead(String text, PointF[] points) {
+            public void onQRCodeRead(final String text, PointF[] points) {
 
                 try {
 
@@ -62,17 +64,19 @@ public class ScanActivity extends AppCompatActivity {
                         }
                     });
 
-                    databaseReference.child("points").addListenerForSingleValueEvent(new ValueEventListener() {
+                    button.setText("это он");
+                    button.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            button.setText(dataSnapshot.getValue().toString());
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getApplicationContext(), PointsActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("userKey", text);
+                            intent.putExtras(bundle);
+                            ScanActivity.this.startActivity(intent);
+                            ScanActivity.this.finish();
                         }
                     });
+
                 }
                 catch (Exception e)
                 {
@@ -81,5 +85,20 @@ public class ScanActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 }
