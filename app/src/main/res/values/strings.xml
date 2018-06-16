@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">QrCodeScannerNareznoy</string>
+    <string name="confButt">Подтвердить</string>
+    <string name="CurrentPts">Сейчас на счёте:</string>
+    <string name="ChangedPts">Станет на счёте:</string>
+    <string name="loading">loading</string>
+    <string name="ButtonUnderScanField">Наведите на QR-код</string>
+    <string name="ViewUponScanField">Тут будет имэил</string>
+    <string name="EnterHint">Пароль</string>
+    <string name="SingIn">Sing in</string>
+    <string name="ptsBiloLabel">Сейчас:</string>
+    <string name="ptsWillBeLabel">Станет:</string>
+    <string name="ptsDiffLabel">Разница:</string>
+    <string name="increase">+</string>
+    <string name="decrease">-</string>
+    <string name="EditTextHint">Введите разницу</string>
+
 </resources>

@@ -7,29 +7,115 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:textColor="@color/colorPrimaryDark"
-            android:gravity="center_horizontal"
-            android:id="@+id/ptsBilo"/>
+            android:layout_weight="0.15">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="1sp"
+                android:text="@string/ptsBiloLabel"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="@string/loading"
+                android:id="@+id/ptsBilo"/>
+        </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:textColor="@color/colorPrimaryDark"
-            android:gravity="center_horizontal"
-            android:id="@+id/pts"/>
+            android:layout_weight="0.15">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="1sp"
+                android:text="@string/ptsWillBeLabel"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_centerInParent="true"
+                android:text="@string/loading"
+                android:id="@+id/ptsWillBe"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="1sp"
+                android:text="@string/ptsDiffLabel"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_centerInParent="true"
+                android:text="@string/loading"
+                android:id="@+id/ptsDiff"/>
+        </RelativeLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:hint="@string/EditTextHint"
+                android:singleLine="true"
+                android:layout_gravity="top"
+                android:scrollHorizontally="true"
+                android:inputType="numberSigned"
+                android:id="@+id/pts"/>
+
+        </LinearLayout>
+
+
+
+
 
         <android.support.v7.widget.AppCompatButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
             android:textSize="40sp"
-            android:text="Confirm"
+            android:text="@string/confButt"
             android:id="@+id/button"/>
 
     </LinearLayout>
