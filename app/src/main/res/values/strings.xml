@@ -4,7 +4,7 @@
     <string name="CurrentPts">Сейчас на счёте:</string>
     <string name="ChangedPts">Станет на счёте:</string>
     <string name="loading">loading</string>
-    <string name="ButtonUnderScanField">Наведите на QR-код</string>
+    <string name="ButtonUnderScanField">Наведите на QR</string>
     <string name="ViewUponScanField">Тут будет имэил</string>
     <string name="EnterHint">Пароль</string>
     <string name="SingIn">Sing in</string>

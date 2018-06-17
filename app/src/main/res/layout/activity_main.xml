@@ -6,25 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
         <EditText
             android:inputType="textPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:hint="@string/EnterHint"
+            android:layout_above="@+id/button"
+            android:layout_centerInParent="true"
             android:text="nareznoygh"
             android:id="@+id/password"/>
 
         <android.support.v7.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:textSize="40sp"
+            android:layout_centerInParent="true"
             android:text="@string/SingIn"
             android:id="@+id/button"/>
-    </LinearLayout>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
