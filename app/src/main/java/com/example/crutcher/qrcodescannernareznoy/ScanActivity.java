@@ -50,7 +50,7 @@ public class ScanActivity extends AppCompatActivity {
 
                 try {
 
-                    DatabaseReference databaseReference = firebaseDatabase.getReference(text);
+                    DatabaseReference databaseReference = firebaseDatabase.getReference("users").child(text);
 
                     databaseReference.child("gmail").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override

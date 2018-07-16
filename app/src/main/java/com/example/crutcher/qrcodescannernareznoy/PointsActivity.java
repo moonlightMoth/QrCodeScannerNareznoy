@@ -36,7 +36,7 @@ public class PointsActivity extends AppCompatActivity {
 
 
         pointsDatabaseReference = firebaseDatabase.
-                getReference(getIntent().getExtras().getString("userKey")).child("points");
+                getReference("users").child(getIntent().getExtras().getString("userKey")).child("points");
 
         getStartingData();
 
