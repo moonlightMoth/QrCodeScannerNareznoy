@@ -20,6 +20,10 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class ScanActivity extends AppCompatActivity {
+
+    String userEmail = "";
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,12 +54,14 @@ public class ScanActivity extends AppCompatActivity {
 
                 try {
 
+
                     DatabaseReference databaseReference = firebaseDatabase.getReference("users").child(text);
 
                     databaseReference.child("gmail").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            textView.setText(dataSnapshot.getValue().toString());
+                            userEmail = dataSnapshot.getValue().toString();
+                            textView.setText(userEmail);
                         }
 
                         @Override
@@ -64,13 +70,14 @@ public class ScanActivity extends AppCompatActivity {
                         }
                     });
 
-                    button.setText("это он");
+                    button.setText("Изменить очки");
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getApplicationContext(), PointsActivity.class);
                             Bundle bundle = new Bundle();
                             bundle.putString("userKey", text);
+                            bundle.putString("userEmail", userEmail);
                             intent.putExtras(bundle);
                             ScanActivity.this.startActivity(intent);
                             ScanActivity.this.finish();
@@ -81,7 +88,7 @@ public class ScanActivity extends AppCompatActivity {
                 }
                 catch (Exception e)
                 {
-                    textView.setText("no such user");
+                    textView.setText("Нет такого юзера");
                 }
 
             }
